@@ -1,0 +1,223 @@
+/* Page styling */
+html {
+  	background: #fefefe;
+}
+
+body {
+	background: #fefefe;
+  	color: #4b507a;
+  	font: 300 24px/1.5 Lato, sans-serif;
+  	margin: 1em auto;
+  	max-width: 36em;
+  	padding: 1em 1em 2em;
+ 	text-align: center;
+}
+
+.buttons {
+	isolation: isolate;
+	display: flex;
+	flex-direction: column;
+  	flex-wrap: wrap;
+	align-items: center;		
+}
+
+h1 {
+	font-family: "Open Sans";
+	font-weight: 400;	
+	font-size: 3em;
+}
+
+/* Buttons */
+
+button {
+  border: 0;
+  box-sizing: border-box;
+  margin: 1em;
+  padding: 1em 2em;
+  font-size: inherit;
+  font-weight: 700;
+  position: relative;
+  vertical-align: middle;
+}
+button::before, button::after {
+  box-sizing: inherit;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+
+.redstone {
+ 	transition: color 0.25s;
+	color: #707070;
+	box-shadow: inset 0 0 0 4px #707070;
+	background: none;
+	padding: 1em 1em;
+}
+
+.redstone::before, .redstone::after {
+	border: 6px solid transparent;
+	width: 0;
+	height: 0;
+}
+
+.redstone::after {
+	bottom: 0;
+	right: 0;
+}
+
+.redstone::before {
+	top: 0;
+	left: 0;
+}
+
+.redstone:hover {
+	color: #e61e1e;
+}
+.redstone:hover::before, .redstone:hover::after {
+	width: 100%;
+	height: 100%;
+}
+.redstone:hover::before {
+	border-top-color: #e61e1e;
+	border-right-color: #e61e1e;
+	transition: width 0.25s ease-out, height 0.25s ease-out 0.25s;
+}
+.redstone:hover::after {
+	border-bottom-color: #e61e1e;
+	border-left-color: #e61e1e;
+	transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+}
+
+.blue {
+	color: #ffffff;
+ 	width: 5em;
+ 	height: 5em;
+ 	padding: 0;
+ 	border-radius: 100%;
+ 	background: #9cedff;
+}
+
+.blue:hover {
+ 	color: #00b6de;
+}
+
+.blue::before, .blue::after {
+ 	top: 0;
+ 	left: 0;
+ 	border-radius: 100%;
+}
+
+.blue::before {
+ 	border: 3px solid transparent;
+}
+.blue:hover::before {
+ 	border-top-color: #00b6de;
+ 	border-right-color: #00b6de;
+ 	border-bottom-color: #00b6de;
+ 	transition: border-top-color 0.15s linear, border-right-color 0.15s linear 0.1s, border-bottom-color 0.15s linear 0.2s;
+}
+
+.blue::after {
+ 	border: 0 solid transparent;
+}
+
+.blue:hover::after {
+	border-top: 3px solid #00b6de;
+ 	border-left-width: 3px;
+ 	border-right-width: 3px;
+ 	-webkit-transform: rotate(270deg);
+         	transform: rotate(270deg);
+	transition: border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
+ 	transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s;
+ 	transition: transform 0.4s linear 0s, border-left-width 0s linear 0.35s, -webkit-transform 0.4s linear 0s;
+}
+
+.line {
+ 	transition: color 0.25s;
+	color: #707070;
+	background: none;
+}
+
+.line:hover {
+ 	color: #ef14ff;
+}
+
+.line::before, .line::after {
+  	top: 0;
+ 	left: 0;
+ 	height: 100%;
+ 	width: 100%;
+ 	-webkit-transform-origin: center;
+	transform-origin: center;
+}
+
+.line::before {
+	border-top: 4px solid #ef14ff;
+	-webkit-transform: scale3d(0, 1, 1);
+          transform: scale3d(0, 1, 1);
+}
+
+.line::after {
+	border-bottom: 4px solid #ef14ff;
+	-webkit-transform: scale3d(0, 1, 1);
+          transform: scale3d(0, 1, 1);
+
+}
+.line:hover::before, .line:hover::after {
+	-webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1);
+	transition: -webkit-transform 0.5s;
+	transition: transform 0.5s;
+	transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
+
+
+.green {
+  	background: -webkit-linear-gradient(#58ac30, #a7df62);
+  	-webkit-background-clip: text;
+  	-webkit-text-fill-color: transparent;
+	box-shadow: inset 0 0 0 5px #58ac30;
+	border-radius: 5px 5px;
+	padding: 1em 1em;
+}
+
+
+.green::before, .green::after {
+	width: 0;
+	height: 0;
+}
+
+.green::after {
+	bottom: 0;
+	right: 0;
+	transition: opacity 0.5s ease 0.5s, top 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+}
+
+.green::before {
+	top: 0;
+	left: 0;
+}
+
+.green:hover {
+	background: linear-gradient(to bottom right, #58ac30 0%, #a7df62 100%);
+	transform: scale(1.25);
+  	z-index: 10;
+	-webkit-text-fill-color: #ffffff;
+	box-shadow: inset 0 0 0 0px;
+}
+
+.green:hover::after {
+	transition: border-color 0s ease-out 0.5s, width 0.25s ease-out 0.5s, height 0.25s ease-out 0.75s;
+}
+
+
+
+
+
+
+
+ 
+
